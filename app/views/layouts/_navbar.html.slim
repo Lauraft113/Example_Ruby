@@ -1,0 +1,15 @@
+- if user_signed_in?
+	br
+
+	div = "Bienvenido #{current_user.nick}"
+	br
+
+	= link_to("Salir", destroy_user_session_path(autenticity_token: form_authenticity_token()), 
+	method: :delete)
+
+- else
+	= link_to("Registrate", new_user_registration_path)
+	br
+
+	=link_to("logueate", user_session_path)
+
